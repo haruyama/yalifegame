@@ -1,4 +1,4 @@
-= Yet Another Life Game Library
+# Yet Another Life Game Library
 
 ライフゲームのライブラリです.
 
@@ -8,7 +8,7 @@
 This is a yet another Life Game library.
 This has a feature which calculates possible father patterns from current pattern.
 
-= Original
+# Original
 
 オリジナルのライフゲームのコードは http://metatoys.org/propella/lifeGame/rubyLife.rb ( Copyright (C) YAMAMIYA Takasi ) です.
 山宮さんは このコードを改変したものを MIT ライセンスで配布することを快諾してくれました.
@@ -19,7 +19,7 @@ Mr. YAMAMIYA allowed me to distribute my code modified from his original code
 under MIT License:
 https://twitter.com/propella/status/334642064065191936 .
 
-= Dependency
+# Dependency
 
 father patterns を計算するのは時間がかかるので, [grosser/parallel · GitHub](https://github.com/grosser/parallel)
 を利用して並列化できるようにしています.
@@ -31,7 +31,7 @@ father patterns を計算するのは時間がかかるので, [grosser/parallel
 6×8 ドット日本語フォント「k6x8」 - http://www.geocities.jp/littlimi/k6x8.htm
 のデータを利用しています.
 
-= Sample
+# Sample
 
     % ruby samples/20x20.rb
 
@@ -101,7 +101,7 @@ father patterns を計算するのは時間がかかるので, [grosser/parallel
               
     ruby samples/calculate_father_pattern.rb o 2  473.04s user 13.77s system 718% cpu 1:07.77 total
 
-= Algorithm
+# Algorithm
 
 総当たりで試しているだけです.
 
