@@ -1,0 +1,16 @@
+PATH
+  remote: .
+  specs:
+    yalifegame (0.0.1)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    parallel (0.6.5)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  parallel
+  yalifegame!
