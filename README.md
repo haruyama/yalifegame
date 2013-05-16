@@ -83,7 +83,7 @@ father patterns を計算するのは時間がかかるので, [grosser/parallel
     O O O O O 
     
     O O   O O 
-                  
+              
               
       O O O   
       O O O   
@@ -93,7 +93,7 @@ father patterns を計算するのは時間がかかるので, [grosser/parallel
         
               
               
-            O     
+        O     
       O   O   
       O   O   
         O     
