@@ -21,6 +21,8 @@ https://twitter.com/propella/status/334642064065191936 .
 
 # Dependencies
 
+ruby 1.9.3 以降が必要です.
+
 father patterns を計算するのは時間がかかるので, [grosser/parallel · GitHub](https://github.com/grosser/parallel)
 を利用して並列化できるようにしています.
 ただし samples/calculate_father_pattern.rb 以外ではこの機能は利用していません.
@@ -44,7 +46,7 @@ father patterns を計算するのは時間がかかるので, [grosser/parallel
     % ruby samples/calculate_father_pattern.rb o 2
 
 第1引数に文字, 第2引数に遡る世代を取ります.
-3x7 の文字にマージンとして左右に 1 cell つけた 5x7 の文字パターンに対して
+3x8 の文字にマージンとして左右に 1 cell つけた 5x8 の文字パターンに対して
 総当たりで世代を遡ります. 1つ条件を満たすものを見つけたら結果を表示します.
 条件を満たすパターンがなければ, 結果は表示されません.
 このプログラムでは 並列度を 4 にしています.
