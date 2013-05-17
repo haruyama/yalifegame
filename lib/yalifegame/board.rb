@@ -86,34 +86,8 @@ module YALifeGame
               subpatterns = dead_subpatterns
             end
             candidates =
-              Parallel.map(candidates, inprocess: in_process) { |c|
-              new_candidates = []
-              subpatterns.each { |sp|
-                nc = []
-                (0...c.size).each { |i|
-                  nc[i] = c[i].clone
-                }
-                catch :match_loop do
-                  (0..2).each { |px|
-                    cx = x + px - 1
-                    (0..2).each { |py|
-                      cy = y + py - 1
-                      if (0...width).include?(cx) && (0...height).include?(cy)
-                        if nc[cx][cy].nil?
-                          nc[cx][cy] = sp[px][py]
-                        elsif nc[cx][cy] == sp[px][py]
-                        else
-                          throw :match_loop
-                        end
-                      else
-                        throw :match_loop if sp[px][py]
-                      end
-                    }
-                  }
-                  new_candidates << nc
-                end
-              }
-              new_candidates
+              Parallel.map(candidates, inprocess: in_process) { |candidate|
+              match_subpatterns(x, y, candidate, subpatterns)
             }.flatten(1)
             throw :loop if candidates.empty?
           }
@@ -157,6 +131,35 @@ module YALifeGame
           @dead_subpatterns << board.father_pattern
         end
       }
+    end
+
+    def match_subpatterns(x, y, candidate, subpatterns)
+      new_candidates = []
+      subpatterns.each { |sp|
+        new_candidate  = []
+        (0...candidate.size).each { |i|
+          new_candidate[i] = candidate[i].clone
+        }
+        catch :match_loop do
+          (0..2).each { |px|
+            cx = x + px - 1
+            (0..2).each { |py|
+              cy = y + py - 1
+              if (0...width).include?(cx) && (0...height).include?(cy)
+                if new_candidate[cx][cy].nil?
+                  new_candidate[cx][cy] = sp[px][py]
+                elsif new_candidate[cx][cy] != sp[px][py]
+                  throw :match_loop
+                end
+              else
+                throw :match_loop if sp[px][py]
+              end
+            }
+          }
+          new_candidates << new_candidate
+        end
+      }
+      new_candidates
     end
   end
 end
