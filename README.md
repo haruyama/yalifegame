@@ -8,7 +8,7 @@
 This is a yet another Life Game library.
 This has a feature which calculates possible father patterns from current pattern.
 
-# Original Code
+# Original Code & Font
 
 オリジナルのライフゲームのコードは http://metatoys.org/propella/lifeGame/rubyLife.rb ( Copyright (C) YAMAMIYA Takasi ) です.
 山宮さんは このコードを改変したものを MIT ライセンスで配布することを快諾してくれました.
@@ -23,15 +23,16 @@ https://twitter.com/propella/status/334642064065191936 .
 
 ruby 1.9.3 以降が必要です.
 
-father patterns を計算するのは時間がかかるので, [grosser/parallel · GitHub](https://github.com/grosser/parallel)
-を利用して並列化できるようにしています.
+father patterns を計算するのは時間がかかるので, [grosser/parallel · GitHub](https://github.com/grosser/parallel) を利用して並列化できるようにしています.
 ただし samples/calculate_father_pattern.rb 以外ではこの機能は利用していません.
 
-[grosser/parallel · GitHub](https://github.com/grosser/parallel) for calculating father patterns parallelly.
+This library uses [grosser/parallel · GitHub](https://github.com/grosser/parallel) to calculate father patterns parallelly.
 
 後に挙げるサンプルプログラムのために
-6×8 ドット日本語フォント「k6x8」 - http://www.geocities.jp/littlimi/k6x8.htm
-のデータを利用しています.
+[6×8 ドット日本語フォント「k6x8」](http://www.geocities.jp/littlimi/k6x8.htm)
+のデータを利用して samples/3x8.json を作成しました.
+
+フォントのライセンスは http://www.geocities.jp/littlimi/font.htm#license にあります.
 
 # Sample Programs
 
